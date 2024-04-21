@@ -5,8 +5,6 @@
 
 import itertools
 import json
-
-# import multiprocessing
 import os
 import random
 import re
@@ -16,8 +14,6 @@ import urllib
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from multiprocessing.managers import DictProxy, ListProxy
-from multiprocessing.synchronize import Semaphore
 
 import executable
 import utils
@@ -198,7 +194,8 @@ VMESS_SUPPORTED_CIPHERS = ["auto", "aes-128-gcm", "chacha20-poly1305", "none"]
 
 SPECIAL_PROTOCOLS = set(["vless", "tuic", "hysteria", "hysteria2"])
 
-XTLS_FLOWS = set(["xtls-rprx-direct", "xtls-rprx-origin", "xtls-rprx-vision"])
+# xtls-rprx-direct and xtls-rprx-origin are deprecated and no longer supported
+# XTLS_FLOWS = set(["xtls-rprx-direct", "xtls-rprx-origin", "xtls-rprx-vision"])
 
 
 def is_hex(word: str) -> bool:
@@ -304,11 +301,13 @@ def verify(item: dict, meta: bool = True) -> bool:
             authentication = "uuid"
 
             network = item.get("network", "ws")
-            if network not in ["ws", "h2", "http", "grpc"]:
+            if network not in ["ws", "h2", "http", "grpc", "httpupgrade"]:
                 return False
             if item.get("network", "ws") in ["h2", "grpc"] and not item.get("tls", False):
                 return False
             if item["cipher"] not in VMESS_SUPPORTED_CIPHERS:
+                return False
+            if "alterId" not in item or not utils.is_number(item["alterId"]):
                 return False
 
             # https://dreamacro.github.io/clash/zh_CN/configuration/configuration-reference.html
@@ -330,10 +329,18 @@ def verify(item: dict, meta: bool = True) -> bool:
                     return False
                 if "path" in http_opts and type(http_opts["path"]) != list:
                     return False
-                if "headers" in http_opts and type(http_opts["headers"]) != dict:
-                    return False
+                if "headers" in http_opts:
+                    headers = http_opts.get("headers", {})
+                    if not isinstance(headers, dict):
+                        return False
+
+                    for key, value in headers.items():
+                        if not isinstance(key, str):
+                            return False
+                        if key.lower() == "host" and not isinstance(value, list):
+                            return False
             elif "ws-opts" in item:
-                if network != "ws":
+                if network != "ws" and network != "httpupgrade":
                     return False
 
                 ws_opts = item.get("ws-opts", {})
@@ -403,7 +410,9 @@ def verify(item: dict, meta: bool = True) -> bool:
                     return False
                 if "flow" in item:
                     flow = utils.trim(item.get("flow", ""))
-                    if flow and flow not in XTLS_FLOWS:
+
+                    # if flow and flow not in XTLS_FLOWS:
+                    if flow and flow != "xtls-rprx-vision":
                         return False
                 if "ws-opts" in item:
                     if network != "ws":
@@ -555,18 +564,13 @@ def verify(item: dict, meta: bool = True) -> bool:
         return False
 
 
-def check(
-    availables: ListProxy,
-    proxy: dict,
-    api_url: str,
-    semaphore: Semaphore,
-    timeout: int,
-    test_url: str,
-    delay: int,
-    validates: DictProxy,
-    strict: bool = False,
-) -> None:
-    proxy_name = urllib.parse.quote(proxy.get("name", ""))
+def check(proxy: dict, api_url: str, timeout: int, test_url: str, delay: int, strict: bool = False) -> bool:
+    proxy_name = ""
+    try:
+        proxy_name = urllib.parse.quote(proxy.get("name", ""))
+    except:
+        return False
+
     base_url = f"http://{api_url}/proxies/{proxy_name}/delay?timeout={str(timeout)}&url="
 
     # 失败重试间隔：30ms ~ 200ms
@@ -620,15 +624,9 @@ def check(
                 except Exception:
                     pass
 
-            sub = proxy.pop("sub", "")
-            availables.append(proxy)
-            if validates != None and sub:
-                validates[sub] = True
+        return alive
     except:
-        pass
-    finally:
-        if semaphore is not None and isinstance(semaphore, Semaphore):
-            semaphore.release()
+        return False
 
 
 def is_meta() -> bool:
