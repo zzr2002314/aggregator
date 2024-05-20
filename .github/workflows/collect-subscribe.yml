@@ -26,7 +26,11 @@ jobs:
     - name: Collect proxies
       run: |
         cd aggregate
-        python -u subscribe/collect.py -s  
+        python -u subscribe/collect.py -s
+
+    - name: Deduplicate YAML
+      run: |
+        python deduplicate.py
 
     - name: Configure Git
       run: |
@@ -35,6 +39,6 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git add /home/runner/work/aggregator/aggregator/aggregate/data/proxies.yaml 
-        git commit -m "Add generated output.yaml"
+        git add /home/runner/work/aggregator/aggregator/aggregate/data/proxies.yaml
+        git commit -m "Add deduplicated proxies.yaml"
         git push
