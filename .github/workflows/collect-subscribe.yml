@@ -37,8 +37,12 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "actions@github.com"
 
+    - name: Pull latest changes
+      run: |
+        git pull --rebase origin master
+
     - name: Commit and push changes
       run: |
         git add /home/runner/work/aggregator/aggregator/aggregate/data/proxies.yaml
-        git commit -m "Add deduplicated proxies.yaml"
+        git commit -m "Remove duplicates from proxies.yaml"
         git push
