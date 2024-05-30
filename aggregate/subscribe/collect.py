@@ -215,7 +215,7 @@ if __name__ == "__main__":
         "--delay",
         type=int,
         required=False,
-        default=5000,
+        default=300,
         help="proxies max delay allowed",
     )
 
@@ -296,7 +296,7 @@ if __name__ == "__main__":
         "--timeout",
         type=int,
         required=False,
-        default=5000,
+        default=300,
         help="timeout",
     )
 
