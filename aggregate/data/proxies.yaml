@@ -1,35 +1,507 @@
 proxies:
 - name: 01凤凰城AMD2
-  password: 5b95bf2f-8215-41b0-bfbc-102abe326b76
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
   port: 443
   server: 01amd2.1365365.xyz
   skip-cert-verify: true
   type: trojan
   udp: true
+- name: 04日本大阪AMD
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
+  port: 443
+  server: 04amd.1365365.xyz
+  skip-cert-verify: true
+  type: trojan
+  udp: true
 - name: 11圣何塞AMD1
-  password: 5b95bf2f-8215-41b0-bfbc-102abe326b76
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
   port: 443
   server: 11amd1.1365365.xyz
   skip-cert-verify: true
   type: trojan
   udp: true
 - name: 11圣何塞ARM1
-  password: 5b95bf2f-8215-41b0-bfbc-102abe326b76
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
   port: 443
   server: 11arm1.1365365.xyz
   skip-cert-verify: true
   type: trojan
   udp: true
-- name: 55阿什本ARM
-  password: 5b95bf2f-8215-41b0-bfbc-102abe326b76
+- name: 15巴西圣保罗AMD
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
   port: 443
-  server: 55arm.1365365.xyz
+  server: 15amd1.1365365.xyz
   skip-cert-verify: true
   type: trojan
   udp: true
 - alterId: 0
   cipher: auto
-  name: 美国7-1A
+  name: 36悉尼AMD-VMESS
+  network: ws
+  port: 443
+  server: 36amd.1365365.xyz
+  servername: 36amd.1365365.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
+  ws-opts:
+    headers:
+      Host: 36amd.1365365.xyz
+    path: /
+- name: 55阿什本ARM
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
+  port: 443
+  server: 55arm.1365365.xyz
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- name: 59春川AMD2
+  password: 052d40d2-f715-44fd-8d06-dd8c9fe4fd66
+  port: 443
+  server: 59amd2.1365365.xyz
+  skip-cert-verify: true
+  type: trojan
+  udp: true
+- cipher: aes-128-gcm
+  name: AU | 澳洲01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15018
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: A台湾
+  password: 2072c2e2-131b-45ad-b0a7-aeaa4f876e57
+  port: 37070
+  server: hinet-wap.myddns.me
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: G美国-免费
+  network: ws
+  port: 80
+  server: 139.28.232.223
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 2072c2e2-131b-45ad-b0a7-aeaa4f876e57
+  ws-opts:
+    headers:
+      Host: usfree.1234585.xyz
+    path: /
+- cipher: aes-128-gcm
+  name: HK | 香港01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15000
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: HK | 香港02
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15001
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: HK | 香港03
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15002
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: JP | 日本01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15006
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: JP | 日本02
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15007
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: JP | 日本03
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15008
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: SG | 新加坡01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15003
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: SG | 新加坡02
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15004
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: SG | 新加坡03
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15005
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: TW | 台湾01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15011
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: UP-YHZ
+  network: ws
+  port: 443
+  server: 48.sking.app
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f8d1710c-d195-4778-b3f2-dfb7468dc516
+  ws-opts:
+    headers:
+      Host: 48.sking.app
+    path: /
+- cipher: aes-128-gcm
+  name: US | 美国01
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15009
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: US | 美国02
+  password: 05b41a82-dd8f-4ad3-a584-76bffa80bc47
+  port: 15010
+  server: 34501.cniw4-dcc3vq.com
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 乌克兰01|0.5X
+  network: ws
+  port: 80
+  server: fxzsrweqd.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: bbxzwwkl3.112592.xyz
+    path: /asdas
+- alterId: 0
+  cipher: auto
+  name: 以色列01|0.1X
+  network: ws
+  port: 2086
+  server: dfboaxm1pon.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: yslznqi.baibaoxiang.free.hr
+    path: /asda
+- cipher: aes-128-gcm
+  name: 俄罗斯 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13510
+  server: nodeeu01.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 俄罗斯01|0.5X
+  network: ws
+  port: 2086
+  server: fxzsrweqd.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: aaxtels1.853782.xyz
+    path: /asdas
+- cipher: aes-256-gcm
+  name: 免费节点1
+  password: 1dbfa122-eca8-4bfd-bef6-781040777eb0
+  port: 7702
+  server: fell.dogsvpn.top
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 免费节点2
+  password: 1dbfa122-eca8-4bfd-bef6-781040777eb0
+  port: 7703
+  server: fell2.dogsvpn.top
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 免费节点3
+  password: 1dbfa122-eca8-4bfd-bef6-781040777eb0
+  port: 7704
+  server: fell3.dogsvpn.top
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 免费节点4
+  password: 1dbfa122-eca8-4bfd-bef6-781040777eb0
+  port: 7705
+  server: fell4.dogsvpn.top
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 南极01|1X
+  network: ws
+  port: 2095
+  server: exzjhwdxz.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: cxzwnj.112592.xyz
+    path: /asdas
+- alterId: 0
+  cipher: auto
+  name: 南非01|1.5X
+  network: ws
+  port: 80
+  server: dfboaxm1pon.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: bxczcnf.112592.xyz
+    path: /asdas
+- alterId: 0
+  cipher: auto
+  name: 卡塔尔01|1X
+  network: ws
+  port: 2086
+  server: cdperpoint.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: ktebbc.clearlove.filegear-sg.me
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 印尼 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13517
+  server: nodehk01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 台湾05|1X
+  password: 33b8683d-b3bb-420e-a144-d393592888ac
+  port: 50015
+  server: tw2.handboy.site
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 土耳其 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13507
+  server: nodeeu01.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 土耳其01|0.5X
+  network: ws
+  port: 80
+  server: apgoodpoint.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: txxatr1.853782.xyz
+    path: /asdas
+- alterId: 0
+  cipher: auto
+  name: 奥地利01|0.5X
+  network: ws
+  port: 80
+  server: cdperpoint.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: cxzcat2.handboy.site
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 尼日利亚 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13512
+  server: nodesg01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 新加坡 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13503
+  server: nodesg01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 新加坡 02
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13514
+  server: nodesg01.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 新加坡02|0.5X
+  network: ws
+  port: 2086
+  server: apgoodpoint.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: xxxsg.853782.xyz
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 日本 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13502
+  server: nodejp01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 日本 02
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13506
+  server: nodejp02.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 日本02|0.5X
+  network: ws
+  port: 2086
+  server: gcxzewqew.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: bbssjp2.nicehand.top
+    path: /asdas
+- alterId: 0
+  cipher: auto
+  name: 日本A
+  network: ws
+  port: 80
+  server: 13.33.100.13
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 2072c2e2-131b-45ad-b0a7-aeaa4f876e57
+  ws-opts:
+    headers:
+      Host: dpxpg5vk2nkog.cloudfront.net
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 朝鲜01|0.5X
+  network: ws
+  port: 2082
+  server: dfboaxm1pon.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: bbxcnk.baibaoxiang.free.hr
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 泰国 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13515
+  server: nodehk01.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 泰国01|0.5X
+  network: ws
+  port: 80
+  server: exzjhwdxz.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: tg1sdbas.nicehand.top
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 美国 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13504
+  server: nodeus01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 美国 02
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13516
+  server: nodeus01.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 美国7
   network: ws
   port: 80
   server: www.udemy.com
@@ -37,22 +509,303 @@ proxies:
   tls: false
   type: vmess
   udp: true
-  uuid: e00b0525-6c77-4f14-9f6f-8ed5f3a8f96b
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
+  ws-opts:
+    headers:
+      Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
+    path: /
+- cipher: aes-128-gcm
+  name: 英国 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13509
+  server: nodeeu01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 阿根廷 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13513
+  server: nodeeu01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 香港 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13501
+  server: nodehk01.nanyun.sbs
+  type: ss
+  udp: true
+- cipher: aes-128-gcm
+  name: 香港 03
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13508
+  server: nodehk02.nanyun.sbs
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 香港 1 LV0-HK
+  port: 22300
+  server: 223.113.130.62
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f1640953-a53e-4426-8233-1761feb703be
+- alterId: 0
+  cipher: auto
+  name: 香港05|1X
+  network: ws
+  port: 2086
+  server: cf-hk.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: xzhk5.853782.xyz
+    path: /asdas
+- cipher: aes-128-gcm
+  name: 马来西亚 01
+  password: 5c8fde56-2fe4-4c26-b5c3-ef251d3822f4
+  port: 13511
+  server: nodesg01.nanyun.sbs
+  type: ss
+  udp: true
+- name: JPN 直连-1A
+  password: 49d37277-2e4f-4049-9122-3db2b929636c
+  port: 25019
+  server: jp4.970504.xyz
+  skip-cert-verify: true
+  sni: jp4.970504.xyz
+  type: trojan
+  udp: true
+- name: JPN 直连-1B
+  password: 49d37277-2e4f-4049-9122-3db2b929636c
+  port: 25007
+  server: jp1.970504.xyz
+  skip-cert-verify: true
+  sni: jp1.970504.xyz
+  type: trojan
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 台湾03|1X-1B
+  password: 33b8683d-b3bb-420e-a144-d393592888ac
+  port: 42652
+  server: tw5.handboy.top
+  type: ss
+  udp: true
+- name: 日本 01 直连-1A
+  password: 2fefec72-7da4-41e8-9349-1661fea25647
+  port: 20220
+  server: zzjp01.gutingting.com
+  skip-cert-verify: true
+  sni: zzjp01.gutingting.com
+  type: trojan
+  udp: true
+- name: 日本 01 直连-1B
+  password: 564e4b59-d30a-4e23-a4a3-7bff88006195
+  port: 20220
+  server: zzjp01.gutingting.com
+  skip-cert-verify: true
+  sni: zzjp01.gutingting.com
+  type: trojan
+  udp: true
+- name: 日本 02 直连-1A
+  password: 2fefec72-7da4-41e8-9349-1661fea25647
+  port: 20221
+  server: zzjp01.gutingting.com
+  skip-cert-verify: true
+  sni: zzjp01.gutingting.com
+  type: trojan
+  udp: true
+- name: 日本 02 直连-1B
+  password: 564e4b59-d30a-4e23-a4a3-7bff88006195
+  port: 20221
+  server: zzjp01.gutingting.com
+  skip-cert-verify: true
+  sni: zzjp01.gutingting.com
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 日本01|1X-1B
+  network: ws
+  port: 2082
+  server: cf-jpc.handboy.top
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 33b8683d-b3bb-420e-a144-d393592888ac
+  ws-opts:
+    headers:
+      Host: cf-jp4.nicehand.top
+    path: /asdas
+- name: 美国 01 直连-1A
+  password: 2fefec72-7da4-41e8-9349-1661fea25647
+  port: 20220
+  server: zzus01.gutingting.com
+  skip-cert-verify: true
+  sni: zzus01.gutingting.com
+  type: trojan
+  udp: true
+- name: 美国 01 直连-1B
+  password: 564e4b59-d30a-4e23-a4a3-7bff88006195
+  port: 20220
+  server: zzus01.gutingting.com
+  skip-cert-verify: true
+  sni: zzus01.gutingting.com
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 美国4-1B
+  network: ws
+  port: 80
+  server: www.pcmag.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
   ws-opts:
     headers:
       Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
     path: /
 - alterId: 0
   cipher: auto
-  name: 美国7-1B
+  name: 美国5-1B
   network: ws
   port: 80
-  server: www.udemy.com
+  server: www.digitalocean.com
   skip-cert-verify: true
   tls: false
   type: vmess
   udp: true
-  uuid: 7567b58a-63b1-4470-a11e-a018663311a9
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
+  ws-opts:
+    headers:
+      Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 美国6-1B
+  network: ws
+  port: 80
+  server: www.glassdoor.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
+  ws-opts:
+    headers:
+      Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 韩国 01-1A
+  network: ws
+  port: 2086
+  server: kr01.appleid.bf
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 15cfe743-6a9c-4f3a-aba1-00f00fe678fe
+  ws-opts:
+    headers:
+      Host: kr01.appleid.bf
+    path: /ws?ed=2048
+- alterId: 0
+  cipher: auto
+  name: 韩国 01-1B
+  network: ws
+  port: 2086
+  server: kr01.appleid.bf
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 11289fb8-e037-4a2b-8089-d64cf3f7e084
+  ws-opts:
+    headers:
+      Host: kr01.appleid.bf
+    path: /ws?ed=2048
+- alterId: 0
+  cipher: auto
+  name: 美国3-1C
+  network: ws
+  port: 80
+  server: fbi.gov
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
+  ws-opts:
+    headers:
+      Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 香港-1B
+  port: 19901
+  server: xg.dashuai.cyou
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 3504367b-5973-4c53-84a7-b84c4245d9d3
+- alterId: 0
+  cipher: auto
+  name: 香港-1C
+  port: 10010
+  server: xg1.tcity8.buzz
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 6c567847-39f0-4b8f-b3b8-04c86c9d7a56
+- alterId: 0
+  cipher: auto
+  name: 香港3-1B
+  port: 10010
+  server: xg3.tcity8.buzz
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 6c567847-39f0-4b8f-b3b8-04c86c9d7a56
+- alterId: 0
+  cipher: auto
+  name: 美国1-1D
+  network: ws
+  port: 80
+  server: 104.19.173.68
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
+  ws-opts:
+    headers:
+      Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 美国2-1E
+  network: ws
+  port: 80
+  server: whatismyipaddress.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 60320a24-e22d-4a34-88e3-59df2907e634
   ws-opts:
     headers:
       Host: usvmqlsgf1ljbtzjun8.lovemianfei.store
