@@ -224,7 +224,7 @@ if __name__ == "__main__":
         "--filename",
         type=str,
         required=False,
-        default="proxies.yaml",
+        default="ProxyPool.yaml",
         help="proxies filename",
     )
 
