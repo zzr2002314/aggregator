@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # 获取完整的 git 历史记录，以确保能够正确同步
 
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -37,8 +39,14 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "actions@github.com"
 
+    - name: Pull latest changes
+      run: |
+        git pull origin master || true # 拉取最新更改，如果失败也继续执行
+
     - name: Commit and push changes
       run: |
-        git add /home/runner/work/aggregator/aggregator/aggregate/data/proxies.yaml
-        git commit -m "Remove duplicates from proxies.yaml"
-        git push
+        git add aggregate/data/proxies.yaml
+        git commit -m "Remove duplicates from proxies.yaml" || echo "No changes to commit"
+        git push origin master || (git pull --rebase origin master && git push origin master)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
